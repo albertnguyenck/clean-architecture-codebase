@@ -1,6 +1,7 @@
 package com.example.domain.submission.event;
 
 import com.example.domain.submission.model.Submission;
+
 import java.time.Instant;
 
 public record SubmissionCreatedEvent(

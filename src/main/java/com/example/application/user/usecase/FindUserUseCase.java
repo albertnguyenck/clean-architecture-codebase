@@ -1,8 +1,8 @@
 package com.example.application.user.usecase;
 
-import com.example.application.user.query.FindUserQuery;
 import com.example.application.user.query.FindAllUsersQuery;
 import com.example.application.user.query.FindUserByEmailQuery;
+import com.example.application.user.query.FindUserQuery;
 import com.example.domain.user.model.User;
 
 import java.util.List;

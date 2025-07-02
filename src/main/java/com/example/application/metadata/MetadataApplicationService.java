@@ -1,7 +1,7 @@
 package com.example.application.metadata;
 
-import com.example.application.metadata.usecase.GetAllMetadataUseCase;
 import com.example.application.metadata.dto.MetadataDto;
+import com.example.application.metadata.usecase.GetAllMetadataUseCase;
 import com.example.infrastructure.external.metadata.client.MetadataServiceClient;
 import org.springframework.stereotype.Service;
 

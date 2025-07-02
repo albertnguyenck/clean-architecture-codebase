@@ -1,7 +1,7 @@
 package com.example.application.document;
 
-import com.example.application.document.usecase.GetAllDocumentsUseCase;
 import com.example.application.document.dto.DocumentDto;
+import com.example.application.document.usecase.GetAllDocumentsUseCase;
 import com.example.infrastructure.external.document.client.DocumentServiceClient;
 import org.springframework.stereotype.Service;
 
