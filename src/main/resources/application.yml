@@ -1,0 +1,52 @@
+# Both Redis and PostgreSQL are configured to run simultaneously
+# No profile switching needed - both infrastructures are available
+
+# Spring Configuration
+spring:
+  # Database Configuration (optional for development)
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ddd_submissions
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  
+  # Spring Data JDBC Configuration
+  data:
+    jdbc:
+      repositories:
+        enabled: true
+
+    # Redis Configuration (optional for development)
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 2000ms
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: submission-service
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+# Logging for SQL queries (optional, for development)
+logging:
+  level:
+    org.springframework.jdbc.core: DEBUG
+    org.springframework.data.jdbc: DEBUG
+
+# Server Configuration
+server:
+  port: 8080
+
+# External Services Configuration
+document:
+  service:
+    url: http://localhost:8081
+metadata:
+  service:
+    url: http://localhost:8082 
